@@ -1,12 +1,14 @@
+import dotenv from "dotenv"
+dotenv.config()
 import knex from "knex"
 
 knex({
-  client: "mysql2",
+  client: process.env.CLIENT,
   connection: {
-    host: "127.0.0.1",
-    user: "root",
-    password: "",
-    database: "usertest",
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
   },
 })
 
